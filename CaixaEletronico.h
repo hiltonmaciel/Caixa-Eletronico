@@ -1,21 +1,20 @@
-#include <iostream>
+
 #include <string>
 using std:: string;
-using std:: getline;
 
-#ifndef CAIXAELETRONICO_H
-#define CAIXAELETRONICO_H
+//#ifndef CAIXAELETRONICO_H
+//#define CAIXAELETRONICO_H
 
 class CaixaEletronico{
 		
 		public:
-			CaixaEletronico(float = 0.0, float = 0.0, float 0.0, float 0.0, const string & = "", string & = "");
+			CaixaEletronico(float, float, float, float, const string &, const string &, const string &, const string &);
 			CaixaEletronico(const CaixaEletronico &);
 			void displayMessage();
 			float sacar(float);
 			float transferir(float);
 			float depositar(float);
-			float mostrarSaldo(float);
+			void mostrarSaldo();
 		
 		private:
 			
@@ -25,5 +24,8 @@ class CaixaEletronico{
 			float deposito;
 			string nome;
 			string numeroConta;
+			string numeroAgencia;
+			string numeroCartaoCredito;
+			const static string linkBancoDados="https://www.meubanco.com.br";
 	};
-#endif
+//#endif
