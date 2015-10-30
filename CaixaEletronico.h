@@ -1,9 +1,8 @@
-
+#ifndef CAIXAELETRONICO_H
+#define CAIXAELETRONICO_H
 #include <string>
 using std:: string;
 
-//#ifndef CAIXAELETRONICO_H
-//#define CAIXAELETRONICO_H
 
 class CaixaEletronico{
 		
@@ -28,4 +27,4 @@ class CaixaEletronico{
 			string numeroCartaoCredito;
 			const static string linkBancoDados="https://www.meubanco.com.br";
 	};
-//#endif
+#endif
