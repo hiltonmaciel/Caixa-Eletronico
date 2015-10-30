@@ -19,6 +19,7 @@ CaixaEletronico::CaixaEletronico(const CaixaEletronico &origem){
 	this->nome=origem.nome;
 	this->numeroConta=origem.numeroConta;
 	this->numeroAgencia=origem.numeroAgencia;
+	this->numeroCartaoCredito=origem.numeroCartaoCredito;
 }
 
 
@@ -32,16 +33,20 @@ void CaixaEletronico::displayMessage()
 
 float CaixaEletronico::sacar(float saques)
 {
-	float a=0.0;
-	saldo>=saques?a=saldo-saques: a = 3;
+	float a=saques;
+	if(saldo>=saques){
+		saldo=saldo-saques;
+	}else{
+		cout<<"\n Saldo insuficiente para realizacao de saques"<<endl;
+	}
 	return a;
 }
 
 
 float CaixaEletronico::depositar(float deposito)
 {
-	float c=0.0;
-	c=saldo+deposito;
+	float c=deposito;
+	saldo=saldo+deposito;
 	return c;
 }
 
@@ -49,13 +54,18 @@ float CaixaEletronico::depositar(float deposito)
 float CaixaEletronico::transferir(float valorTransferido)
 {
 	float d=0.0;
-	saldo>=valorTransferido?this->d=saldo-valorTransferido:this->cout<<"\n Saldo Insuficiente para realizar esta transferencia"<<endl;
+	if(saldo>=valorTransferido){
+		saldo=saldo-valorTransferido;
+		d=valorTransferido;
+	}else{
+	cout<<"\n Saldo Insuficiente para realizar esta transferencia"<<endl;
+	}
 	return d;
 }
 
 
 void CaixaEletronico::mostrarSaldo()
 {
-	cout<<"\n Seu saldo é de"<<saldo<<" reais"<<endl;
+	cout<<"\n Seu saldo é de "<<saldo<<" reais"<<endl;
 	
 }
